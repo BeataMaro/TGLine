@@ -1,0 +1,60 @@
+{
+  "name": "tgline",
+  "private": true,
+  "description": "TGLine - firma z wieloletnim doświadczeniem. Nowoczesne, całoroczne pawilony z płyt warstwowych.",
+  "version": "0.1.0",
+  "author": "Beata Maro <maro.beata@gmail.com>",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@svgr/webpack": "^8.1.0",
+    "bootstrap": "^5.3.3",
+    "decap-cms-app": "^3.1.11",
+    "framer-motion": "^11.3.30",
+    "gatsby": "^5.13.5",
+    "gatsby-plugin-decap-cms": "^4.0.4",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-offline": "^6.13.2",
+    "gatsby-plugin-sass": "^6.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-plugin-svgr": "^3.0.0-beta.0",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-remark": "^6.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
+    "node-sass": "^9.0.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.4",
+    "react-dom": "^18.2.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "resolutions": {
+    "graphql": "16.0.0"
+  },
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tgline-cms/TGLine"
+  },
+  "bugs": {
+    "url": "https://github.com/tgline-cms/TGLine"
+  }
+}

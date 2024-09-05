@@ -1,0 +1,15 @@
+@import "../../style/style.scss";
+
+main {
+  .hero-bg {
+    background-color: $navy;
+    min-height: clamp(90vh, 95vh, 100vh);
+    --bs-gutter-x: 0;
+    z-index: 0;
+
+    @media (min-width: 1200px) {
+      padding-left: 6rem;
+      background: linear-gradient(to right, $navy 90%, white 10%);
+    }
+  }
+}

@@ -1,0 +1,245 @@
+---
+backend:
+  name: git-gateway
+  branch: main
+media_folder: src/images
+public_folder: /images
+collections:
+  - name: pawilony
+    preview: false
+    label: Oferta
+    folder: content/pawilony
+    create: true
+    slug: pawilon-{{id}}
+    fields:
+      - label: Rozmiar
+        name: size
+        widget: string
+      - label: Wymiary zewnetrzne
+        name: external_dimensions
+        widget: string
+      - label: Wymiary wewnetrzne
+        name: internal_dimensions
+        widget: string
+      - label: Wysokosc wewnatrz
+        name: internal_height
+        widget: string
+      - label: Tolerancja wymiarow
+        name: dimension_tolerance
+        widget: string
+      - label: Wykonczenie
+        name: decoration
+        widget: string
+      - label: Czas dostawy
+        name: delivery
+        widget: string
+      - label: Cena
+        name: price
+        widget: string
+      - label: Cena - opis
+        name: price_description
+        widget: string
+      - label: Zdjecie produktu
+        name: product_image
+        widget: image
+        pattern:
+          - .*\.(webp|jpg|jpeg|png)$
+          - "Dozwolone są tylko zdjęcia z rozszerzeniem: .webp, .jpg, .jpeg lub .png"
+        hint: "Dodaj zdjęcie w orientacji poziomej"
+        media_folder: ../../src/images/
+        public_folder: ../../src/images
+      - label: Id
+        name: id
+        widget: string
+      - label: Ref - opis
+        name: ref_description
+        widget: string
+      - label: markdownName
+        name: markdownName
+        widget: hidden
+        default: pawilon
+      - label: Slug
+        name: slug
+        widget: hidden
+        default: pawilon-{{id}}
+      - label: Wyposażenie
+        name: equipment
+        widget: list
+        allow_add: true
+        fields:
+          - label: Element wyposażenia
+            name: equipment_item
+            widget: string
+      - label: Dodatkowe wyposażenie
+        name: extra_equipment
+        widget: list
+        allow_add: true
+        fields:
+          - label: Element dodatkowego wyposażenia
+            name: extra_equipment_item
+            widget: string
+      - label: Product gallery
+        name: product_gallery
+        required: false
+        widget: list
+        allow_add: true
+        fields:
+          - label: Zdjecie produktu
+            name: gallery_product_image
+            widget: image
+            pattern:
+              - .*\.(webp|jpg|jpeg|png)$
+              - "Dozwolone są tylko zdjęcia z rozszerzeniem: .webp, .jpg, .jpeg lub .png"
+            media_folder: ../../src/images/pawilon-{{id}}
+            public_folder: ../../src/images/pawilon-{{id}}
+      - label: Grafika 1
+        name: wall_image
+        widget: image
+        pattern:
+          - .*\.(webp|jpg|jpeg|png)$
+          - "Dozwolone są tylko zdjęcia z rozszerzeniem: .webp, .jpg, .jpeg lub .png"
+        default: ../../src/images/eps_sandwich1.webp
+        media_folder: ../../src/images/
+        public_folder: ../../src/images/
+      - label: Opis grafiki 1
+        name: wall_image_description
+        widget: string
+      - label: Grafika 2
+        name: roof_image
+        widget: image
+        pattern:
+          - .*\.(webp|jpg|jpeg|png)$
+          - "Dozwolone są tylko zdjęcia z rozszerzeniem: .webp, .jpg, .jpeg lub .png"
+        default: ../../src/images/eps_sandwich2.webp
+        media_folder: ../../src/images/
+        public_folder: ../../src/images/
+      - label: Opis grafiki 2
+        name: roof_image_description
+        widget: string
+      - label: Grafika 3
+        name: floor_image
+        widget: image
+        pattern:
+          - .*\.(webp|jpg|jpeg|png)$
+          - "Dozwolone są tylko zdjęcia z rozszerzeniem: .webp, .jpg, .jpeg lub .png"
+        default: ../../src/images/eps_sandwich3.webp
+        media_folder: ../../src/images/
+        public_folder: ../../src/images/ 
+      - label: Opis grafiki 3
+        name: floor_image_description
+        widget: string   
+  - name: about
+    label: O nas
+    folder: content/about
+    slug: o-nas
+    fields:
+      - label: Naglowek
+        name: about_heading
+        widget: string
+      - label: Zdjecie1
+        name: about_image
+        widget: image
+        pattern:
+          - .*\.(webp|jpg|jpeg|png)$
+          - "Dozwolone są tylko zdjęcia z rozszerzeniem: .webp, .jpg, .jpeg lub .png"
+        media_folder: ../../src/images/
+        public_folder: ../../src/images
+      - label: Zdjecie2
+        name: about_image2
+        widget: image
+        pattern:
+          - .*\.(webp|jpg|jpeg|png)$
+          - "Dozwolone są tylko zdjęcia z rozszerzeniem: .webp, .jpg, .jpeg lub .png"
+        media_folder: ../../src/images/
+        public_folder: ../../src/images
+      - label: Tekst
+        name: about_text
+        widget: string
+        max_length: 800
+        pattern:
+          - ".{1,800}"
+          - "Tekst nie może przekraczać 800 znaków."
+      - label: Body
+        name: body
+        widget: markdown
+        max_length: 1000
+        pattern:
+          - ".{1,1000}"
+          - "Tekst nie może przekraczać 1000 znaków."
+  - name: contact
+    label: Kontakt
+    folder: content/contact
+    slug: kontakt
+    fields:
+      - label: Naglowek
+        name: contact_heading
+        widget: string
+      - label: E-mail
+        name: contact_email
+        widget: string
+      - label: Telefon
+        name: contact_phone
+        widget: string
+      - label: Adres
+        name: contact_address
+        widget: string
+      - label: Facebook
+        name: facebook_url
+        required: false
+        widget: string
+      - label: YouTube
+        name: youtube_url
+        required: false
+        widget: string
+      - label: Instagram
+        name: instagram_url
+        required: false
+        widget: string
+      - label: Zdjęcie mapy
+        name: contact_map
+        widget: image
+        default: ../../src/images/map.webp
+        pattern:
+          - .*\.(webp|jpg|jpeg|png)$
+          - "Dozwolone są tylko zdjęcia z rozszerzeniem: .webp, .jpg, .jpeg lub .png"
+        required: false
+        media_folder: ../../src/images/
+        public_folder: ../../src/images
+      - label: URL mapy
+        name: contact_map_url
+        widget: string
+        required: false
+        default: https://www.google.pl/maps/place/Z%C5%82ota+10,+44-121+Gliwice/@50.3058847,18.6259742,281m/data=!3m1!1e3!4m6!3m5!1s0x4711307f0099d381:0x85f1585fd4408dca!8m2!3d50.305974!4d18.626319!16s%2Fg%2F11c2ctbv6_?entry=ttu
+        pattern:
+           - "^(https?:\\/\\/)?www\\.google\\.pl\\/maps\\/place\\/"
+           - "Proszę, wpisz poprawny adres URL Google Maps"
+  - name: hero
+    label: Strona głowna
+    folder: content/hero
+    slug: /
+    fields:
+      - label: Tytul
+        name: hero_heading1
+        hint: "Maksymalna długość tytułu to 40 znaków"
+        max_length: 40
+        pattern:
+          - ".{1,40}"
+          - "Tekst nie może przekraczać 40 znaków."
+        widget: string
+      - label: Subtytul
+        name: hero_heading2
+        hint: "Maksymalna długość subtytułu to 40 znaków"
+        max_length: 40
+        pattern:
+          - ".{1,40}"
+          - "Tekst nie może przekraczać 40 znaków."
+        widget: string
+      - label: Zdjecie
+        name: hero_image
+        hint: "Dodaj zdjęcie o wysokiej rozdzielczości, w orientacji poziomej."
+        widget: image
+        media_folder: ../../src/images/
+        public_folder: ../../src/images
+      - label: Tekst linku do oferty
+        name: hero_link
+        widget: string

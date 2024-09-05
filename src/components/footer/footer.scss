@@ -1,0 +1,7 @@
+@import "../../style/style.scss";
+
+footer {
+  background-color: $navy;
+  color: $main;
+  font-size: clamp(.7rem, 1vh + .5rem, 0.8rem);
+}

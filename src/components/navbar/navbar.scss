@@ -1,0 +1,221 @@
+@import "../../style/style.scss";
+
+@mixin grey-hover-block {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-color: $lightGrey;
+  width: 100%;
+  height: 1.2rem;
+  z-index: -1;
+}
+
+.logo {
+  width: 4rem;
+
+  @media (min-width: 768px) {
+    width: 5rem;
+  }
+  @media (min-width: 992px) {
+    width: 6rem;
+  }
+}
+
+.nav {
+  font-size: 1.25rem !important;
+  height: 10vh;
+}
+
+.navbar-toggler {
+  &:not(.collapsed) {
+    border: none !important;
+    .navbar-toggler-icon {
+      background-color: grey !important;
+      transform: rotate(45deg) translate(-13px, 2px) !important;
+      height: 0.3rem;
+      width: 2rem;
+      border-radius: 40px;
+      transition: all 0.3s linear !important;
+      position: relative;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        height: 0.3rem;
+        width: 2rem;
+        right: 0;
+        border-radius: 40px;
+        background-color: $navy !important;
+        transition: all 0.3s linear;
+      }
+
+      &::after {
+        transform: rotate(90deg) !important;
+        background-color: grey !important;
+        height: 0.3rem;
+      }
+      &::before {
+        opacity: 0;
+        height: 0.3rem;
+      }
+    }
+  }
+  &.collapsed {
+    border: none !important;
+    background-color: $navy !important;
+    width: 2rem;
+    height: 0.3rem !important;
+    padding: 0 !important;
+    border-radius: 40px;
+    transition: all 0.3s linear !important;
+    align-self: center;
+    position: relative;
+    margin-right: 1rem;
+
+    ::before,
+    ::after {
+      position: absolute;
+      content: "";
+      height: 0.3rem;
+      width: 2rem;
+      right: 0;
+      border-radius: 40px;
+      background-color: $navy !important;
+      transition: all 0.3s linear;
+    }
+
+    ::before {
+      top: -0.5rem;
+    }
+
+    ::after {
+      top: 0.5rem;
+    }
+  }
+
+  &:focus {
+    box-shadow: none !important;
+  }
+  &-icon {
+    background-image: none !important;
+  }
+}
+
+.offcanvas {
+  .dropdown-menu {
+    border: none;
+    box-shadow: 1px 1px 1.2rem rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  .dropdown-item {
+    text-align: right;
+    &:last-child {
+      border-bottom: none !important;
+    }
+  }
+
+  &-header .btn-close {
+    margin-top: 2.5rem !important;
+    margin-right: 1rem !important;
+    --bs-btn-close-bg: none;
+    padding: 0 !important;
+    position: relative;
+    transition: 0.2s linear !important;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 2rem;
+      height: 0.3rem;
+      background-color: grey;
+      border-radius: 40px;
+      transition: 0.1s linear;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  &-toggling &-header .btn-close {
+    &::after {
+      transform: rotate(90deg) !important;
+    }
+    &::before {
+      transform: rotate(45deg) !important;
+    }
+  }
+  &-body {
+    padding: 0 !important;
+    .navbar-nav {
+      .nav-link {
+        transition: 0.1s linear;
+        @media (max-width: 992px) {
+          border-bottom: 1px solid $lightGrey;
+        }
+
+        &:hover {
+          @media (min-width: 992px) {
+            background-color: $lightGrey;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-item.dropdown:has(.dropdown-menu .active-navitem) {
+  .dropdown-toggle.nav-link {
+    position: relative;
+    padding-bottom: 0 !important;
+
+    @media (min-width: 1200px) {
+      &::before {
+        @include grey-hover-block;
+      }
+    }
+  }
+}
+
+.dropdown-menu .dropdown-item:focus {
+  background-color: $navy !important;
+  color: $lightGrey !important;
+}
+.dropdown-menu .dropdown-item:active {
+  background-color: $brandColor;
+}
+.active-navitem {
+  background-color: $lightGrey !important;
+}
+
+.nav-link {
+  z-index: 100;
+  text-align: center;
+
+  @media (min-width: 1200px) {
+    margin-left: 2rem;
+  }
+}
+
+.active-menuitem {
+  position: relative;
+  padding-bottom: 0 !important;
+  background-color: $lightGrey !important;
+
+  @media (min-width: 1200px) {
+    background-color: transparent !important;
+    &::before {
+      @include grey-hover-block;
+    }
+  }
+}
